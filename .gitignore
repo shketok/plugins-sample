@@ -1,0 +1,9 @@
+.git
+.idea
+*.iml
+target
+debug.log
+.allure
+.gradle
+/gradle/
+/build/

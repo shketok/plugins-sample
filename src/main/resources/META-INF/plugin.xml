@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.shketok.TestRailPlugin</id>
+    <name>TestrailStatus</name>
+    <version>1.0</version>
+    <vendor email="a.lebakov@a1qa.com" url="http://www.a1qa.com">a1qa</vendor>
+    <idea-version since-build="164"/>
+
+    <description>Plugin description here and more text for min 40 symbols</description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="last"/>
+            <action
+                    id="shketok.plugin.testrailAuth" class="plugin.actions.TestRailLogin"
+                    text="Login to the Testrail and Save Api Client"
+                    description="Login to the testrail and save api client via inputting credentials">
+            </action>
+            <action
+                    id="Testrail.Status.Project.Auto" class="plugin.actions.TestRailAutomatizationStatus"
+                    text="Set Testrail Statuses" description="Set automation test statuses to the testrail">
+            </action>
+            <action
+                    id="Migration.Selenoid.To.Aqality" class="plugin.actions.MigrateSelenoidToAqality"
+                    text="Migration Selenoid to Aqality" description="Migration selenoid to aqality">
+            </action>
+        </group>
+    </actions>
+</idea-plugin>
